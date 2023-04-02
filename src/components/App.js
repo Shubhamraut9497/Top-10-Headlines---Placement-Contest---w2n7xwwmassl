@@ -5,13 +5,12 @@ const App = () => {
   const [category, setCategory] = useState("general");
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const api="4b863fdc53ae9fea01bdd0f0e14fab54";
   const changeFunction=(e)=>{
      setCategory(e.target.value);
   }
   useEffect(()=>{
     setLoading(true);
-    fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en?country=us&max=10&api=${api}`).then((res)=>{
+    fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en?country=us&max=10&api=4b863fdc53ae9fea01bdd0f0e14fab54`).then((res)=>{
       setNewsData(res.articles);
     }).then(()=>setLoading(false));
   },[category])
