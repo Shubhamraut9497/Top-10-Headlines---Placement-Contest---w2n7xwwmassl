@@ -10,7 +10,7 @@ const App = () => {
   }
   useEffect(()=>{
     setLoading(true);
-    fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en?country=us&max=10&api=4b863fdc53ae9fea01bdd0f0e14fab54`).then((res)=>{
+    fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=4b863fdc53ae9fea01bdd0f0e14fab54`).then((res)=>{
       setNewsData(res.articles);
     }).then(()=>setLoading(false));
   },[category])
